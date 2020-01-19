@@ -1,0 +1,11 @@
+{% extends 'file_browser/base.html' %}
+    {% block content %}
+      <!-- <div class="jumbotron" style="margin-left: 10%; margin-right: 10%; padding-top: 1%; padding-bottom: 1%;"> -->
+          <h1 id="index-heading">Packages:</h1>
+          <p class="text-muted"><small>Found: {{ Count }}</small></p>
+          <br>
+          {% for item in names %}
+          <a href="{% url 'package_page' item %}">{{ item }}</a><br>
+          {% endfor %}
+      <!-- </div> -->
+    {% endblock %}

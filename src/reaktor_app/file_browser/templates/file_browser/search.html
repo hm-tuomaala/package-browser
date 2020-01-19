@@ -1,0 +1,33 @@
+{% extends 'file_browser/base.html' %}
+    {% block content %}
+      <!-- <div class="jumbotron" style="margin-left: 10%; margin-right: 10%; margin-bottom: 0; padding: 1%; padding-bottom: 5%"> -->
+          <h1> {{ Name }} </h1>
+          <br>
+          <h5>Description:</h5>
+          <p class="text-muted" style="white-space: pre-line;">{{ Description }}</p>
+          <h5>Dependencies:</h5>
+          {% if Depends %}
+            {% for dep, link in Depends %}
+                {% if link == 1 %}
+                    <a href="{% url 'package_page' dep %}">{{ dep }}</a><br>
+                {% else %}
+                    <p style="margin: 0">{{ dep }}</p>
+                {% endif %}
+            {% endfor %}
+          {% else %}
+            <p class="text-muted">—</p>
+          {% endif %}
+          <br>
+          <h5>Reverse dependencies:</h5>
+          {% if Reverse %}
+            {% for rev, link in Reverse %}
+                {% if link == '1' or link == 1 %}
+                    <a href="{% url 'package_page' rev %}">{{ rev }}</a><br>
+                {% else %}
+                    <p>{{ rev }}</p>
+                {% endif %}
+            {% endfor %}
+          {% else %}
+            <p class="text-muted">—</p>
+          {% endif %}
+    {% endblock %}
