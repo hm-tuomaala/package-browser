@@ -26,4 +26,5 @@ def browse(request, key):
                         }
             return render(request, 'file_browser/search.html', context)
     #If package is not found return 404
-    return HttpResponse("404 Not found")
+    context = {'Key':key}
+    return render(request, 'file_browser/error.html', context)

@@ -33,7 +33,7 @@ for item in dump:
                             data[current_pkg][key].append(new_entry)
 
         except IndexError:
-            #Unneccessery lines from the file end up here
+            #Unneccessery lines from the file are skipped
             pass
 
 #Form the dependencies links between packages
