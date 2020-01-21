@@ -3,6 +3,7 @@ import os
 #Dict to hold the package data
 data = {}
 
+#This is where mock data file lives (could also be taken from /var/lib/dpkg/status)
 file = open('static/status.real', 'r')
 
 #Parse the package file
