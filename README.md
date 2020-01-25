@@ -5,7 +5,7 @@ for the reaktor junior developer position.
 Python (>=3.6.7)
 ## Setup
 Download repo and run:  
-`pip3 -r install requirements.txt`  
+`pip3 install -r requirements.txt`  
 (virtualenv recomended)
 ## Development environment
 To run django development environment on linux, run:  
